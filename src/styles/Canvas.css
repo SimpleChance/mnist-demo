@@ -1,0 +1,90 @@
+/* Flex container to hold grid and prediction side by side */
+.canvas-container {
+  display: flex;
+  align-items: flex-start; /* Align items at the top */
+  justify-content: center;
+  gap: 80px; /* Adjust gap as needed */
+  margin: 20px;
+}
+
+/* Container for the grid */
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* The drawing canvas grid */
+.canvas {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+/* Grid rows */
+.row {
+  display: flex;
+}
+
+/* Each grid cell */
+.cell {
+  width: 21px;
+  height: 21px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* Filled cells styling */
+.cell.filled {
+  background-color: #000;
+}
+
+/* Reset button styling */
+button {
+  margin-top: 15px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Prediction container styling */
+.prediction {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 16px;
+  max-width: 300px;
+  max-height: 90vh;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  overflow-x: auto; /* Allow scrolling if content overflows */
+}
+
+/* Prediction heading */
+.prediction h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Prediction table styling */
+.prediction table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+  overflow-y: auto;
+}
+
+.prediction th,
+.prediction td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+/* Highlight the best prediction row */
+.prediction .highlight {
+  background-color: #d4edda;
+  font-weight: bold;
+}
