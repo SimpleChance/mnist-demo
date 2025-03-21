@@ -1,90 +1,146 @@
-/* Flex container to hold grid and prediction side by side */
+/* Outer wrapper */
 .canvas-container {
   display: flex;
-  align-items: flex-start; /* Align items at the top */
   justify-content: center;
-  gap: 80px; /* Adjust gap as needed */
-  margin: 20px;
+  margin: 55px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Container for the grid */
-.grid-container {
+/* Stack grid + prediction vertically */
+.grid-prediction-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 30px;
 }
 
-/* The drawing canvas grid */
+/* Canvas styling */
 .canvas {
-  border: 1px solid #ddd;
-  padding: 10px;
+  border: 2px solid #e0e0e0;
+  padding: 20px;
+  background-color: #fafafa;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
 }
 
-/* Grid rows */
+/* Rows for canvas grid */
 .row {
   display: flex;
 }
 
-/* Each grid cell */
+/* Grid cell */
 .cell {
   width: 21px;
   height: 21px;
   border: 1px solid #ccc;
   background-color: #fff;
   cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-/* Filled cells styling */
+.cell:hover {
+  background-color: #eee;
+  transform: scale(1.05);
+}
+
+/* Filled cells */
 .cell.filled {
-  background-color: #000;
+  background-color: #111;
+  border-color: #999;
 }
 
-/* Reset button styling */
+/* Reset button */
 button {
-  margin-top: 15px;
-  padding: 8px 16px;
+  margin-top: 20px;
+  padding: 10px 18px;
   font-size: 14px;
   cursor: pointer;
+  background-color: #4f46e5;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
 }
 
-/* Prediction container styling */
+button:hover {
+  background-color: #4338ca;
+}
+
+/* Prediction container */
 .prediction {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 16px;
-  max-width: 300px;
-  max-height: 90vh;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 90vw;
   width: 100%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-family: Arial, sans-serif;
-  overflow-x: auto; /* Allow scrolling if content overflows */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
-/* Prediction heading */
+/* Heading */
 .prediction h3 {
-  margin: 0 0 10px 0;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  margin-bottom: 16px;
   text-align: center;
 }
 
-/* Prediction table styling */
-.prediction table {
+/* Container for vertical bar chart */
+.prediction-vertical-bars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 10px;
+  min-height: 200px;
+  padding: 10px 0;
+  overflow-x: auto;
+}
+
+/* Each column */
+.vbar-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 24px;
+}
+
+/* Bar wrapper */
+.vbar {
   width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 10px;
-  overflow-y: auto;
+  height: 140px;
+  background-color: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
 }
 
-.prediction th,
-.prediction td {
-  border: 1px solid #ccc;
-  padding: 8px;
+/* Filled portion of bar */
+.vbar-fill {
+  width: 100%;
+  background-color: #4f46e5;
+  transition: height 0.4s ease;
+  position: absolute;
+  bottom: 0;
+}
+
+/* Symbol label below */
+.vbar-label {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
   text-align: center;
 }
 
-/* Highlight the best prediction row */
-.prediction .highlight {
-  background-color: #d4edda;
-  font-weight: bold;
+/* Highlight best prediction */
+.vbar-column.highlight .vbar-fill {
+  background-color: #22c55e;
+}
+
+/* Note below chart */
+.note {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
 }

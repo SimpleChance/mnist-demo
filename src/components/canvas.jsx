@@ -120,53 +120,54 @@ const Canvas = () => {
 
   return (
     <div className="canvas-container">
-      <div
-        className="canvas"
-        onMouseLeave={handleMouseUp}
-        onMouseUp={handleMouseUp}
-        onDragStart={(e) => e.preventDefault()}
-        onDrop={(e) => e.preventDefault()}
-      >
-        {grid.map((row, rowIndex) => (
-          <div key={rowIndex} className="row">
-            {row.map((cell, colIndex) => (
-              <div
-                key={colIndex}
-                className={`cell ${cell ? "filled" : ""}`}
-                onMouseDown={(e) => handleMouseDown(rowIndex, colIndex, e.button)}
-                onMouseEnter={() => handleMouseEnter(rowIndex, colIndex)}
-                onContextMenu={(e) => e.preventDefault()}
-              ></div>
-            ))}
-          </div>
-        ))}
-        <button onClick={resetGrid}>Reset Grid</button>
-      </div>
-      {prediction && (
-        <div className="prediction">
-          <h3>Prediction Probabilities</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Symbol</th>
-                <th>Probability</th>
-              </tr>
-            </thead>
-            <tbody>
-              {prediction.map((p) => (
-                <tr
-                  key={p.digit}
-                  className={p.digit === bestPredictionClass ? "highlight" : ""}
-                >
-                  <td>{mapping[p.digit]}</td>
-                  <td>{p.probability}</td>
-                </tr>
+      <div className="grid-prediction-wrapper">
+        <div
+          className="canvas"
+          onMouseLeave={handleMouseUp}
+          onMouseUp={handleMouseUp}
+          onDragStart={(e) => e.preventDefault()}
+          onDrop={(e) => e.preventDefault()}
+        >
+          {grid.map((row, rowIndex) => (
+            <div key={rowIndex} className="row">
+              {row.map((cell, colIndex) => (
+                <div
+                  key={colIndex}
+                  className={`cell ${cell ? "filled" : ""}`}
+                  onMouseDown={(e) => handleMouseDown(rowIndex, colIndex, e.button)}
+                  onMouseEnter={() => handleMouseEnter(rowIndex, colIndex)}
+                  onContextMenu={(e) => e.preventDefault()}
+                ></div>
               ))}
-            </tbody>
-          </table>
-          <p>The highlighted row represents the model's best guess.</p>
+            </div>
+          ))}
+          <button onClick={resetGrid}>Reset Grid</button>
         </div>
-      )}
+  
+        {prediction && (
+          <div className="prediction">
+            <h3>Prediction Probabilities</h3>
+            <div className="prediction-vertical-bars">
+              {prediction.map((p) => {
+                const isBest = p.digit === bestPredictionClass;
+                const barHeight = `${p.probability}`;
+                return (
+                  <div
+                    key={p.digit}
+                    className={`vbar-column ${isBest ? "highlight" : ""}`}
+                  >
+                    <div className="vbar">
+                      <div className="vbar-fill" style={{ height: barHeight }}></div>
+                    </div>
+                    <span className="vbar-label">{mapping[p.digit]}</span>
+                  </div>
+                );
+              })}
+            </div>
+            <p className="note">The tallest (green) bar is the model's best guess.</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
