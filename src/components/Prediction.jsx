@@ -47,11 +47,11 @@ const mapping = {
     39: "e",
     40: "f",
     41: "g",
-    42: "n",
-    43: "q",
-    44: "r",
-    45: "t",
-    46: "y"
+    42: "h",
+    43: "n",
+    44: "q",
+    45: "r",
+    46: "t"
 };
 
 /** Prediction component for displaying the model's prediction probabilities.
