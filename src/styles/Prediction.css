@@ -1,0 +1,85 @@
+/* Prediction Styling */
+.prediction {
+  padding: 1vw; 
+  width: 85vw; 
+  max-height: 20vh; 
+  background-color: #fafafa;
+  border: 0.2vw solid #e0e0e0; 
+  border-radius: 1vw; 
+  box-shadow: 0 0.4vw 1.2vw rgba(0, 0, 0, 0.08); 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Heading */
+.prediction h3 {
+  font-size: 1.2rem; 
+  text-align: center;
+  margin-top: 0.5vh; 
+}
+
+/* Container for vertical bar chart */
+.prediction-vertical-bars {
+  display: flex;
+  flex-direction: row;;
+  overflow-x: auto;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.8vw; 
+  min-height: 15vh; 
+  padding: 0.5vw; 
+  padding-top: 0.2vh;
+}
+
+/* Each column (representing a bar) */
+.vbar-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto; 
+}
+
+/* Bar wrapper */
+.vbar {
+  width: 1vw;
+  max-width: 30px;
+  height: 12vh;
+  max-height: 150px;
+  background-color: #eee;
+  border-radius: 0.3vw 0.3vw 0 0;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+}
+
+/* Filled portion of bar */
+.vbar-fill {
+  width: 100%;
+  background-color: #4f46e5;
+  transition: height 0.4s ease;
+  position: absolute;
+  bottom: 0;
+}
+
+/* Symbol label below */
+.vbar-label {
+  margin-top: 0.5vh;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Highlight best prediction */
+.vbar-column.highlight .vbar .vbar-fill {
+  background-color: #22c55e;
+}
+
+/* Note below chart */
+.note {
+  margin-top: 1vh;
+  font-size: 0.8rem;
+  color: #555;
+  text-align: center;
+}
