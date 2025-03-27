@@ -68,7 +68,7 @@ const Prediction = ({ grid }) => {
     // Load the TensorFlow.js model when the component mounts.
     useEffect(() => {
         async function initializeModel() {
-            const loadedModel = await loadModel("/model_bymerge_v1/model.json");
+            const loadedModel = await loadModel("./data/model_bymerge_v1/model.json");
             setModel(loadedModel);
         }
         initializeModel();
