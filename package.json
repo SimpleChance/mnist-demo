@@ -2,7 +2,8 @@
   "name": "mnist-demo",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://SimpleChance.github.io/mnistdemo/",
+  "main": "src/index.js",
+  "homepage": "https://SimpleChance.github.io/mnistdemo",
   "dependencies": {
     "@tensorflow/tfjs": "^4.22.0",
     "@testing-library/dom": "^10.4.0",
