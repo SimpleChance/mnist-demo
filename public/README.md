@@ -1,17 +1,17 @@
 # MNIST Demo
 
-MNIST Demo is an interactive web application built with React and TensorFlow.js that classifies handwritten digits in real time. Draw a number (0–9) directly in your browser, and the app will display the model’s prediction probabilities alongside a confidence score. It’s a hands‑on demonstration of how modern machine learning can be run entirely on the client side, without any backend server.
-
-Under the hood, MNIST Demo loads a pre-trained convolutional neural network (CNN) model converted to TensorFlow.js format. Every time you draw or clear the canvas, the app preprocesses your input into a 28×28 grayscale image, feeds it into the model, and updates the UI with the predicted digit and probability distribution.
-
-This project showcases:
-
-- **Client‑side inference:** Run ML models directly in the browser using TensorFlow.js.
-- **Interactive UI:** Draw digits on a responsive canvas, see live predictions, and clear or retry instantly.
+MNIST Demo is an interactive web application built with React and TensorFlow.js that classifies handwritten digits in real time. Draw a symbol (0-9, A-Z) directly in your browser, and the app will display the model’s prediction probabilities.
 
 ## Live Demo
 
 https://SimpleChance.github.io/mnistdemo/
+
+## Datasets
+
+This demo uses two standard benchmark datasets:
+
+- **MNIST Handwritten Digit Database** by Yann LeCun, Corinna Cortes, and Christopher J.C. Burges (1998). Available at: http://yann.lecun.com/exdb/mnist/
+- **EMNIST** (Extended MNIST) by Gregory Cohen, Saeed Afshar, Jonathan Tapson, and André Van Schaik (2017). Available at: https://www.nist.gov/itl/iad/image-group/emnist-dataset
 
 ## Run Locally
 
