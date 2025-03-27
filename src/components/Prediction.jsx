@@ -89,7 +89,7 @@ const Prediction = ({ grid }) => {
     }
 
     if (!prediction.length) {
-        return <p className="prediction">Draw something to see a prediction…</p>;
+        return <p className="prediction">Model Loading...</p>;
     }
 
     return (
