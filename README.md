@@ -11,7 +11,8 @@ https://SimpleChance.github.io/mnistdemo/
 This demo uses two standard benchmark datasets:
 
 - **MNIST Handwritten Digit Database** by Yann LeCun, Corinna Cortes, and Christopher J.C. Burges (1998). Available at: http://yann.lecun.com/exdb/mnist/
-- **EMNIST** (Extended MNIST) by Gregory Cohen, Saeed Afshar, Jonathan Tapson, and André Van Schaik (2017). Available at: https://www.nist.gov/itl/iad/image-group/emnist-dataset
+- **EMNIST** (Extended MNIST) Available at: https://www.nist.gov/itl/iad/image-group/emnist-dataset Cohen, G., Afshar, S., Tapson, J., & van Schaik, A. (2017). EMNIST: an extension of MNIST to handwritten letters. Retrieved from http://arxiv.org/abs/1702.05373
+
 
 ## Run Locally
 
