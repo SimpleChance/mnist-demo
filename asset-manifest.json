@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/mnistdemo/static/css/main.1d37f04b.css",
-    "main.js": "/mnistdemo/static/js/main.02552998.js",
+    "main.js": "/mnistdemo/static/js/main.a19f5341.js",
     "index.html": "/mnistdemo/index.html",
     "main.1d37f04b.css.map": "/mnistdemo/static/css/main.1d37f04b.css.map",
-    "main.02552998.js.map": "/mnistdemo/static/js/main.02552998.js.map"
+    "main.a19f5341.js.map": "/mnistdemo/static/js/main.a19f5341.js.map"
   },
   "entrypoints": [
     "static/css/main.1d37f04b.css",
-    "static/js/main.02552998.js"
+    "static/js/main.a19f5341.js"
   ]
 }
